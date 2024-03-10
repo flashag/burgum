@@ -7,5 +7,5 @@ alt: image-alt
 project-date: August 2020
 category: Game
 title: EnglishTap
-description: EnglishTap is a mobile game where players practice and challenge their English level.
+description: EnglishTap is a mobile game where players practice and challenge their English level. <a href="https://play.google.com/store/apps/details?id=com.BrandeGame.EnglishTap">Android</a>
 ---
