@@ -1,9 +1,10 @@
 ---
 title: Privacy
 permalink: /privacy-policy/
-layout: page
-comments: false
+layout: null
 ---
+Privacy Policy
+
 Hi! It's Artem from BurGum Games. We use the following collected information to improve the quality of our games.
 DATA:
 We collect non-personal information (data that cannot be used to identify you):
