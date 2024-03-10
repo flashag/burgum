@@ -17,6 +17,6 @@ We collect non-personal information (data that cannot be used to identify you):
 - Crash reports to help fix bugs
 Your data is protected against unauthorized access and loss through the use of various electronic, technical, physical, administrative and contractual measures. Our priority is that you enjoy our games - We don't share your personal data with other companies.
 CONTACT
-If you have any questions about this Privacy Policy, please contact us at artem@pronomad.ru.
+If you have any questions about this Privacy Policy, please contact me at f1ashag@yandex.ru.
 BurGum Games reserves the right to modify this privacy policy at any time, so please review it frequently.
 Copyright © BurGum Games 2024
