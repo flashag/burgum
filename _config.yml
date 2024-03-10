@@ -7,6 +7,11 @@ keywords: "indie game, gamedev, steam, game development"
 skills: "Indie game developer"
 meta_author: Artem Gumennikov
 
+# Collection setting
+collections:
+  pages:
+    output: true
+
 # Google webmaster tools
 google_verify:
 
