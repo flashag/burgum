@@ -1,9 +1,8 @@
 ---
+title: Privacy
+permalink: /privacy-policy/
 layout: page
-title:  "Privacy Policy"
-date:   2024-03-10 09:29:20 +0700
-categories: 
-image: 
+comments: false
 ---
 Hi! It's Artem from BurGum Games. We use the following collected information to improve the quality of our games.
 DATA:
