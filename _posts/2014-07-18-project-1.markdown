@@ -7,5 +7,5 @@ alt: image-alt
 project-date: January 2024
 category: Game
 title: Fall Words
-description: A puzzle game where is your goal to collect stars by typing the right letters. <a href="https://play.google.com/store/apps/details?id=org.burgumgames.fallletters">Android</a> <a href="https://apps.apple.com/us/app/fall-words-physics-puzzle-game/id6476096991">iOS</a>
+description: A puzzle game where is your goal to collect stars by typing the right letters.<br /><a href="https://play.google.com/store/apps/details?id=org.burgumgames.fallletters">Android</a><br /><a href="https://apps.apple.com/us/app/fall-words-physics-puzzle-game/id6476096991">iOS</a><br /><a href="https://store.steampowered.com/app/2905960/Fall_Words/">Steam</a>
 ---
