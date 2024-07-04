@@ -44,10 +44,10 @@ footer:
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: threads
+  - title: twitter
     url: https://www.threads.net/@artem_gumennikov
-  - title: google-plus
-    url: https://play.google.com/store/apps/developer?id=BurGum
+  - title: steam
+    url: https://store.steampowered.com/curator/45054438-BurGum-Games/
 
 # Postal address (add as many lines as necessary)
 address:
