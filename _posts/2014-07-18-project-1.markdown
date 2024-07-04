@@ -2,10 +2,10 @@
 layout: default
 modal-id: 1
 date: 2024-01-18
-img: fallwords_icon_1024.png
+img: backpack.png
 alt: image-alt
-project-date: January 2024
+project-date: May 2024
 category: Game
-title: Fall Words
-description: A puzzle game where is your goal to collect stars by typing the right letters.<br /><a href="https://play.google.com/store/apps/details?id=org.burgumgames.fallletters">Android</a><br /><a href="https://apps.apple.com/us/app/fall-words-physics-puzzle-game/id6476096991">iOS</a><br /><a href="https://store.steampowered.com/app/2905960/Fall_Words/">Steam</a>
+title: Tidy Backpack
+description: Tidy Backpack is a relaxing puzzle game where you must arrange found fantasy loot in your backpack in a tidy way. Find forgotten artifacts and learn details about the old world... at least supposedly!<br /><a href="https://store.steampowered.com/app/3047220/Tidy_Backpack/">Steam</a>
 ---
