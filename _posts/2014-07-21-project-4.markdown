@@ -1,0 +1,11 @@
+---
+layout: default
+modal-id: 1
+date: 2025-03-11
+img: birdfull.png
+alt: image-alt
+project-date: March 2025
+category: Game
+title: Birdfull
+description: Birdfull is a short relaxing idle game. Attract birds with feed, try to keep them longer, and discover all of them including the unique ones! Watch the birds, generate more eggs in real time, and customize your cozy bird space.<br /><a href="https://store.steampowered.com/app/3194890/Birdfull/">Steam</a><br /><a href="https://flashag.notion.site/Birdfull-Presskit-1970fc7ec94f80039e69e27471205f58?pvs=74">Presskit</a>
+---

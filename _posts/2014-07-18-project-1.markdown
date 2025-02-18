@@ -7,5 +7,5 @@ alt: image-alt
 project-date: May 2024
 category: Game
 title: Tidy Backpack
-description: Tidy Backpack is a relaxing puzzle game where you must arrange found fantasy loot in your backpack in a tidy way. Find forgotten artifacts and learn details about the old world... at least supposedly!<br /><a href="https://store.steampowered.com/app/3047220/Tidy_Backpack/">Steam</a>
+description: Tidy Backpack is a relaxing puzzle game where you must arrange found fantasy loot in your backpack in a tidy way. Find forgotten artifacts and learn details about the old world... at least supposedly!<br /><a href="https://store.steampowered.com/app/3047220/Tidy_Backpack/">Steam</a><br /><a href="https://flashag.notion.site/Tidy-Backpack-Presskit-e3a65da71fd042f187997efc195c1a4b">Presskit</a>
 ---
