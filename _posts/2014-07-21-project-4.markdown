@@ -1,5 +1,12 @@
 ---
-layout: default
+layout: game
+permalink: /games/birdfull/
+steam_id: "3194890"
+summary: "A small relaxing idle game about attracting birds to your cozy space."
+presskit: "https://flashag.notion.site/Birdfull-Presskit-1970fc7ec94f80039e69e27471205f58?pvs=74"
+stores:
+  - label: View on Steam
+    url: https://store.steampowered.com/app/3194890/Birdfull/
 modal-id: 4
 date: 2025-01-11
 img: birdfull.png

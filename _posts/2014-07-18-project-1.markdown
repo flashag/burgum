@@ -1,5 +1,12 @@
 ---
-layout: default
+layout: game
+permalink: /games/tidy-backpack/
+steam_id: "3047220"
+summary: "A relaxing puzzle game about organizing fantasy loot in your backpack."
+presskit: "https://flashag.notion.site/Tidy-Backpack-Presskit-e3a65da71fd042f187997efc195c1a4b"
+stores:
+  - label: View on Steam
+    url: https://store.steampowered.com/app/3047220/Tidy_Backpack/
 modal-id: 1
 date: 2024-01-18
 img: backpack.png

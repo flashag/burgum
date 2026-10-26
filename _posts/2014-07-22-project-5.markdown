@@ -1,5 +1,12 @@
 ---
-layout: default
+layout: game
+permalink: /games/alien-morgue/
+steam_id: "3885910"
+summary: "Be an alien pathologist. Dissect bodies, find answers, make choices."
+presskit: "https://www.notion.so/flashag/Alien-Morgue-Press-Kit-2380fc7ec94f80f6a4cbc68636dc6299?source=copy_link"
+stores:
+  - label: View on Steam
+    url: https://store.steampowered.com/app/3885910/Alien_Morgue/
 modal-id: 5
 date: 2025-08-05
 img: alienmorgue.png

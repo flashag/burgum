@@ -1,8 +1,9 @@
 # Site settings
 title: BurGum Games
-email: f1ashag@yandex.ru
-url: https://flashag.github.io/burgum/
-description: "Indie game developer"
+email: hello@burgumgames.com
+url: https://burgumgames.com
+baseurl: ""
+description: "An independent game studio for two. We are a couple making games in Madeira, Portugal."
 keywords: "indie game, gamedev, steam, game development"
 skills: "Indie game developer"
 meta_author: Artem Gumennikov
@@ -62,6 +63,16 @@ credits: 'Coming soon...'
 # Build settings
 markdown: kramdown
 permalink: pretty
+exclude:
+  - AGENTS.md
+  - .agent
+  - scripts
+  - tests
+  - README.md
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
+  - freelancer-theme-jekyll.gemspec
 
 #for posts
 defaults:

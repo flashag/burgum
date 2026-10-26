@@ -1,0 +1,15 @@
+{% assign card_game = site.data.steam[include.post.steam_id] %}
+<article class="game-card">
+  <a class="game-card-link" href="{{ include.post.url | relative_url }}">
+    <div class="game-card-media{% unless card_game %} game-card-media--icon{% endunless %}">
+      {% if card_game %}
+      <img src="{{ card_game.capsule | relative_url }}" alt="{{ include.post.title | escape }}" width="460" height="215" loading="lazy">
+      {% else %}
+      <img src="{{ '/img/portfolio/' | append: include.post.img | relative_url }}" alt="{{ include.post.title | escape }}" width="512" height="512" loading="lazy">
+      {% endif %}
+    </div>
+    <h3>{{ include.post.title }}</h3>
+    <p>{{ include.post.summary }}</p>
+    <span class="text-link">View game <span aria-hidden="true">&rarr;</span></span>
+  </a>
+</article>
