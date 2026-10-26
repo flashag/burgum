@@ -22,14 +22,16 @@ const { chromium } = require('playwright');
             '/games/tidy-backpack/',
             '/games/fall-words/'
         ], 'Catalog must be ordered by release date with no English Tap');
-        assert.match(await page.locator('.game-card').first().locator('.game-metadata').innerText(), /Upcoming/);
+        assert.equal(await page.locator('.game-card .game-metadata').count(), 0);
+        assert.equal(await page.locator('.game-card-description').count(), 6);
+        assert.match(await page.locator('.game-card-description').first().innerText(), /^Balatro-like roguelike curling/);
         assert.equal(await page.locator('.site-brand img').count(), 1);
         for (const path of paths) {
             const response = await page.goto(root + path, { waitUntil: 'networkidle' });
             assert.equal(response.status(), 200, path);
             assert.equal(await page.locator('.game-facts').count(), 0);
             assert.equal(await page.locator('.game-page > .game-metadata').count(), 1);
-            assert.ok((await page.locator('.game-summary').innerText()).length > 20);
+            assert.equal(await page.locator('.game-summary').count(), 0);
             if (['/games/alien-morgue/', '/games/birdfull/', '/games/tidy-backpack/'].includes(path)) {
                 assert.equal(await page.locator('.game-description a').filter({ hasText: 'Press kit' }).count(), 1);
             }

@@ -17,7 +17,6 @@
     </div>
     {% include game_metadata.html post=page %}
     {% if game %}{% assign description = game.short_description %}{% else %}{% assign description = page.description | split: '<a ' | first | split: '<br' | first | strip_html %}{% endif %}
-    <p class="game-summary">{{ description | truncate: 180 }}</p>
     {% if game %}
     <section class="gallery" aria-label="{{ page.title | escape }} screenshots" data-gallery>
       {% assign first_shot = game.screenshots | first %}

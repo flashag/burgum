@@ -70,8 +70,7 @@ h3 { font-size: 18px; line-height: 1.4; letter-spacing: -0.4px; }
 .store-links { display: flex; gap: 10px; flex-wrap: wrap; }
 .button { display: inline-flex; justify-content: center; align-items: center; gap: 14px; padding: 10px 19px; background: var(--ink); color: #fff; border: 1px solid var(--ink); font-size: 14px; line-height: 1.5; }
 .button:hover { background: #35383c; text-decoration: none; }
-.game-page > .game-metadata { color: var(--muted); margin-top: 12px; font-size: 14px; }
-.game-summary { color: var(--muted); margin-top: 14px; margin-bottom: 28px; max-width: 850px; }
+.game-page > .game-metadata { color: var(--muted); margin-top: 12px; margin-bottom: 28px; font-size: 14px; }
 .gallery-main { display: block; background: var(--surface); }
 .gallery-main img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; }
 .gallery-controls { display: flex; align-items: stretch; gap: 10px; margin-top: 12px; }
@@ -108,7 +107,6 @@ h3 { font-size: 18px; line-height: 1.4; letter-spacing: -0.4px; }
     .catalog { padding-block: 30px 38px; }
     .game-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
     .game-heading { align-items: flex-start; flex-direction: column; gap: 16px; }
-    .game-summary { margin-top: 18px; }
     .game-details { grid-template-columns: minmax(0, 1fr); gap: 26px; }
     .gallery-thumbnail { flex-basis: 92px; }
     .gallery-arrow { flex-basis: 26px; }

@@ -9,7 +9,8 @@
       {% endif %}
     </div>
     <h3>{{ include.post.title }}</h3>
-    {% include game_metadata.html post=include.post %}
+    {% if card_game %}{% assign card_description = card_game.short_description %}{% else %}{% assign card_description = include.post.description | split: '<a ' | first | split: '<br' | first | strip_html %}{% endif %}
+    <p class="game-card-description">{{ card_description | truncate: 160 }}</p>
     <span class="text-link">View game <span aria-hidden="true">&rarr;</span></span>
   </a>
 </article>
