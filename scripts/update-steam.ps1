@@ -39,10 +39,28 @@ foreach ($appId in $appIds) {
         capsule = "/$relativeDirectory/capsule.jpg"
         short_description = $game.short_description
         release_date = $game.release_date.date
+        coming_soon = $game.release_date.coming_soon
         developers = @($game.developers)
         publishers = @($game.publishers)
         genres = @($game.genres | ForEach-Object { $_.description })
         screenshots = $screenshots
+    }
+    $releaseDate = [datetime]::MinValue
+    $hasDate = [datetime]::TryParse($game.release_date.date, [System.Globalization.CultureInfo]::InvariantCulture, [System.Globalization.DateTimeStyles]::None, [ref]$releaseDate)
+    if (-not $hasDate -and -not $game.release_date.coming_soon) {
+        throw "Could not parse the released game's date: $($game.name)"
+    }
+    $releaseOrder = if ($hasDate) { $releaseDate.ToString('yyyy-MM-dd') } else { '9999-12-31' }
+    Get-ChildItem (Join-Path $projectRoot '_posts') -Filter '*.markdown' | ForEach-Object {
+        $postText = [System.IO.File]::ReadAllText($_.FullName)
+        if ($postText -match ('(?m)^steam_id:\s*"' + $appId + '"')) {
+            if ($postText -match '(?m)^release_order:') {
+                $postText = [regex]::Replace($postText, '(?m)^release_order:[^\r\n]*', "release_order: `"$releaseOrder`"")
+            } else {
+                $postText = $postText -replace '(?m)^layout: game', "layout: game`nrelease_order: `"$releaseOrder`""
+            }
+            [System.IO.File]::WriteAllText($_.FullName, $postText, [System.Text.UTF8Encoding]::new($false))
+        }
     }
     Write-Output "Updated $($game.name): capsule and $index screenshots."
 }

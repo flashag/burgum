@@ -9,7 +9,7 @@
       {% endif %}
     </div>
     <h3>{{ include.post.title }}</h3>
-    <p>{{ include.post.summary }}</p>
+    {% include game_metadata.html post=include.post %}
     <span class="text-link">View game <span aria-hidden="true">&rarr;</span></span>
   </a>
 </article>

@@ -1,0 +1,2 @@
+{% assign metadata_game = site.data.steam[include.post.steam_id] %}
+<p class="game-metadata">{% if metadata_game %}{% if metadata_game.coming_soon %}Upcoming{% else %}{{ metadata_game.release_date }}{% endif %}<span aria-hidden="true"> &middot; </span>{{ metadata_game.genres | join: ', ' }}{% else %}{{ include.post.project-date }}<span aria-hidden="true"> &middot; </span>{{ include.post.genre }}{% endif %}</p>

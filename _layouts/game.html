@@ -15,7 +15,9 @@
         {% endfor %}
       </div>
     </div>
-    <p class="game-summary">{{ page.summary }}</p>
+    {% include game_metadata.html post=page %}
+    {% if game %}{% assign description = game.short_description %}{% else %}{% assign description = page.description | split: '<a ' | first | split: '<br' | first | strip_html %}{% endif %}
+    <p class="game-summary">{{ description | truncate: 180 }}</p>
     {% if game %}
     <section class="gallery" aria-label="{{ page.title | escape }} screenshots" data-gallery>
       {% assign first_shot = game.screenshots | first %}
@@ -43,26 +45,17 @@
     <section class="game-details" aria-labelledby="about-game-title">
       <div class="game-description">
         <h2 id="about-game-title">About the game</h2>
-        {% if game %}<p>{{ game.short_description }}</p>{% else %}<p>{{ page.description | split: '<a ' | first | split: '<br' | first }}</p>{% endif %}
+        <p>{{ description }}</p>
         {{ content }}
+        {% if page.presskit %}<p><a class="text-link" href="{{ page.presskit }}">Press kit <span aria-hidden="true">&nearr;</span></a></p>{% endif %}
       </div>
-      <aside class="game-facts" aria-label="Game information">
-        <dl>
-          <div><dt>Release date</dt><dd>{% if game %}{{ game.release_date }}{% else %}{{ page.project-date }}{% endif %}</dd></div>
-          <div><dt>Developer</dt><dd>{% if game %}{{ game.developers | join: ', ' }}{% else %}BurGum Games{% endif %}</dd></div>
-          {% if game %}
-          <div><dt>Publisher</dt><dd>{{ game.publishers | join: ', ' }}</dd></div>
-          <div><dt>Genre</dt><dd>{{ game.genres | join: ', ' }}</dd></div>
-          {% endif %}
-        </dl>
-        {% if page.presskit %}<a class="text-link" href="{{ page.presskit }}">Press kit <span aria-hidden="true">&nearr;</span></a>{% endif %}
-      </aside>
     </section>
     <section class="related-games" aria-labelledby="more-games-title">
       <h2 id="more-games-title">More games</h2>
       <div class="game-grid game-grid--related">
         {% assign related_count = 0 %}
-        {% for post in site.posts %}
+        {% assign catalog = site.posts | sort: 'release_order' | reverse %}
+        {% for post in catalog %}
           {% if post.url != page.url and related_count < 2 %}
             {% include game_card.html post=post %}
             {% assign related_count = related_count | plus: 1 %}

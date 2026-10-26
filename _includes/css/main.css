@@ -36,7 +36,8 @@ h3 { font-size: 18px; line-height: 1.4; letter-spacing: -0.4px; }
 .skip-link { position: absolute; left: 16px; top: -80px; z-index: 10; padding: 12px 20px; background: #fff; }
 .skip-link:focus { top: 12px; }
 .site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 91px; border-bottom: 1px solid var(--line); }
-.site-brand { color: var(--ink); font-size: 25px; font-weight: 700; letter-spacing: -1px; white-space: nowrap; }
+.site-brand { display: block; flex: 0 0 auto; }
+.site-brand img { width: 126px; height: auto; }
 .site-header nav, .site-footer nav { display: flex; flex-wrap: wrap; gap: 28px; }
 .site-header nav a { font-size: 14px; color: var(--ink); }
 .studio-intro { padding-block: 74px 67px; border-bottom: 1px solid var(--line); }
@@ -69,6 +70,7 @@ h3 { font-size: 18px; line-height: 1.4; letter-spacing: -0.4px; }
 .store-links { display: flex; gap: 10px; flex-wrap: wrap; }
 .button { display: inline-flex; justify-content: center; align-items: center; gap: 14px; padding: 10px 19px; background: var(--ink); color: #fff; border: 1px solid var(--ink); font-size: 14px; line-height: 1.5; }
 .button:hover { background: #35383c; text-decoration: none; }
+.game-page > .game-metadata { color: var(--muted); margin-top: 12px; font-size: 14px; }
 .game-summary { color: var(--muted); margin-top: 14px; margin-bottom: 28px; max-width: 850px; }
 .gallery-main { display: block; background: var(--surface); }
 .gallery-main img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; }
@@ -80,14 +82,10 @@ h3 { font-size: 18px; line-height: 1.4; letter-spacing: -0.4px; }
 .gallery-thumbnail[aria-current="true"] { border-color: var(--accent); opacity: 1; }
 .gallery-thumbnail:hover { opacity: 1; }
 .gallery-status { text-align: right; margin-top: 7px; font-size: 12px; }
-.game-details { display: grid; grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr); gap: 44px; border-top: 1px solid var(--line); margin-top: 28px; padding-block: 32px 40px; }
+.game-details { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 1px solid var(--line); margin-top: 28px; padding-block: 32px 40px; }
 .game-description p { margin-top: 14px; color: var(--muted); }
 .game-description h3 { margin-top: 24px; }
 .game-description li { color: var(--muted); }
-.game-facts { padding-left: 28px; border-left: 1px solid var(--line); font-size: 13px; color: var(--muted); }
-.game-facts dl { margin: 0 0 15px; }
-.game-facts dl div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 12px; margin-bottom: 7px; }
-.game-facts dd { margin: 0; overflow-wrap: anywhere; }
 .related-games { padding-block: 31px 50px; border-top: 1px solid var(--line); }
 .related-games h2 { margin-bottom: 24px; }
 .game-grid--related { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -98,13 +96,11 @@ h3 { font-size: 18px; line-height: 1.4; letter-spacing: -0.4px; }
 @media (max-width: 900px) {
     .container { width: calc(100% - 56px); }
     .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .game-details { grid-template-columns: minmax(0, 1.6fr) minmax(220px, 1fr); gap: 24px; }
-    .game-facts { padding-left: 20px; }
 }
 @media (max-width: 600px) {
     .container { width: calc(100% - 40px); }
     .site-header { min-height: 84px; gap: 15px; flex-wrap: wrap; padding-block: 18px; }
-    .site-brand { font-size: 22px; }
+    .site-brand img { width: 110px; }
     .site-header nav { gap: 17px; }
     .site-header nav a { font-size: 13px; }
     .studio-intro { padding-block: 46px 40px; }
@@ -114,7 +110,6 @@ h3 { font-size: 18px; line-height: 1.4; letter-spacing: -0.4px; }
     .game-heading { align-items: flex-start; flex-direction: column; gap: 16px; }
     .game-summary { margin-top: 18px; }
     .game-details { grid-template-columns: minmax(0, 1fr); gap: 26px; }
-    .game-facts { border-left: 0; border-top: 1px solid var(--line); padding: 22px 0 0; }
     .gallery-thumbnail { flex-basis: 92px; }
     .gallery-arrow { flex-basis: 26px; }
     .studio-about { padding-block: 30px 36px; }

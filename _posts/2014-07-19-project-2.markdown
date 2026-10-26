@@ -1,7 +1,8 @@
 ---
 layout: game
+release_order: "2023-10-01"
+genre: Puzzle
 permalink: /games/fall-words/
-summary: "A physics-based puzzle game where your letters become the solution."
 stores:
   - label: Google Play
     url: https://play.google.com/store/apps/details?id=org.burgumgames.fallletters&hl=en

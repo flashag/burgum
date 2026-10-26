@@ -18,11 +18,11 @@ Open http://127.0.0.1:4000. No Node build step is required.
 
 ## Game content
 
-The five existing games live in `_posts/*.markdown`. Their original metadata
-and store/press links are retained. The redesign adds:
+The six games live in `_posts/*.markdown`. Their original metadata
+and store/press links are retained. The current templates use:
 
 - `layout: game` and a unique `permalink: /games/game-name/`
-- `summary`: a concise card/page introduction
+- `release_order`: an ISO date used for newest-first catalog ordering
 - `stores`: a list of `label` and `url` pairs
 - `presskit`: an optional press-kit URL
 - `steam_id`: an optional **quoted string** identifying a Steam game
@@ -48,8 +48,9 @@ fabricated screenshot gallery.
 
 To add another game, follow an existing post, give it a unique permalink and
 store links, and add its image (or quoted Steam ID). Every post automatically
-appears on the homepage. Keep existing publication dates if you want to preserve
-the catalog order; actual Steam release dates are displayed from the snapshot.
+appears on the homepage. Publication dates do not control catalog order; the
+importer updates `release_order` from Steam release dates. Upcoming games with
+no exact date sort first.
 
 ## Design and interactions
 
@@ -71,7 +72,7 @@ bundle exec rake test
 ```
 
 The Python check requires a built `_site` and checks internal links, fragments,
-assets, all five game routes, related-game links, and development-file exclusions.
+assets, all six game routes, related-game links, and development-file exclusions.
 Rake additionally runs the existing HTMLProofer external-link checks.
 
 Optional headless browser checks require Playwright and installed Google Chrome.

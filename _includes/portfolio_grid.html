@@ -4,7 +4,8 @@
     <span class="muted">{{ site.posts | size }} games</span>
   </div>
   <div class="game-grid">
-    {% for post in site.posts %}
+    {% assign catalog = site.posts | sort: 'release_order' | reverse %}
+    {% for post in catalog %}
       {% include game_card.html post=post %}
     {% endfor %}
   </div>

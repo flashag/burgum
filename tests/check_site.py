@@ -42,8 +42,8 @@ for path, page in pages.items():
             errors.append(f"{path.relative_to(root)}: missing fragment {link}")
 
 home = pages[root / "index.html"]
-if len(home.game_links) != 5 or len(set(home.game_links)) != 5:
-    errors.append("Homepage must link to all five distinct game pages")
+if len(home.game_links) != 6 or len(set(home.game_links)) != 6:
+    errors.append("Homepage must link to all six distinct game pages")
 for link in home.game_links:
     path = root / link.lstrip("/") / "index.html"
     if path not in pages:
@@ -56,4 +56,4 @@ for private in ("AGENTS.md", ".agent", "tests", "scripts"):
 
 if errors:
     raise SystemExit("\n".join(errors))
-print(f"PASS: {len(pages)} HTML pages; all local links, assets, fragments, five game routes, and related-game links.")
+print(f"PASS: {len(pages)} HTML pages; all local links, assets, fragments, six game routes, and related-game links.")

@@ -3,7 +3,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title }}</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="{{ page.summary | default: site.description | escape }}">
+  {% assign head_game = site.data.steam[page.steam_id] %}
+  {% assign head_description = page.description | split: '<a ' | first | split: '<br' | first | strip_html %}
+  <meta name="description" content="{{ head_game.short_description | default: head_description | default: site.description | escape }}">
   <meta name="keywords" content="{{ site.keywords }}" />
   {% if site.meta_author %}
   <meta name="author" content="{{ site.meta_author }}">{% endif %}

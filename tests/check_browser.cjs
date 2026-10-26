@@ -10,13 +10,29 @@ const { chromium } = require('playwright');
         const errors = [];
         page.on('pageerror', error => errors.push(error.message));
         await page.goto(root, { waitUntil: 'networkidle' });
-        assert.equal(await page.locator('.game-card').count(), 5);
+        assert.equal(await page.locator('.game-card').count(), 6);
         const sizes = await page.locator('.game-card-media').evaluateAll(nodes => nodes.map(node => [node.offsetWidth, node.offsetHeight]));
         assert.equal(new Set(sizes.map(JSON.stringify)).size, 1, 'Card media dimensions differ');
         const paths = await page.locator('.game-card-link').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
+        assert.deepEqual(paths, [
+            '/games/rogue-curling/',
+            '/games/tidy-backpack-in-the-faraway-lands/',
+            '/games/alien-morgue/',
+            '/games/birdfull/',
+            '/games/tidy-backpack/',
+            '/games/fall-words/'
+        ], 'Catalog must be ordered by release date with no English Tap');
+        assert.match(await page.locator('.game-card').first().locator('.game-metadata').innerText(), /Upcoming/);
+        assert.equal(await page.locator('.site-brand img').count(), 1);
         for (const path of paths) {
             const response = await page.goto(root + path, { waitUntil: 'networkidle' });
             assert.equal(response.status(), 200, path);
+            assert.equal(await page.locator('.game-facts').count(), 0);
+            assert.equal(await page.locator('.game-page > .game-metadata').count(), 1);
+            assert.ok((await page.locator('.game-summary').innerText()).length > 20);
+            if (['/games/alien-morgue/', '/games/birdfull/', '/games/tidy-backpack/'].includes(path)) {
+                assert.equal(await page.locator('.game-description a').filter({ hasText: 'Press kit' }).count(), 1);
+            }
             const broken = await page.locator('img').evaluateAll(nodes => nodes.filter(node => node.complete && !node.naturalWidth).map(node => node.src));
             assert.deepEqual(broken, [], 'Broken game images');
             if (await page.locator('[data-gallery]').count()) {
@@ -41,7 +57,7 @@ const { chromium } = require('playwright');
             }
         }
         assert.deepEqual(errors, [], 'Browser JavaScript errors');
-        console.log('PASS: five uniform cards, all game pages/images, gallery click and keyboard controls, 320/375/768/1440px layouts.');
+        console.log('PASS: six uniform cards, all game pages/images, gallery click and keyboard controls, 320/375/768/1440px layouts.');
     } finally {
         await browser.close();
     }

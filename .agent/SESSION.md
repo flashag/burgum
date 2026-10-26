@@ -1,32 +1,25 @@
-# Website redesign
+# Website continuity
 
-## Goal and approval
-- User approved the second image concept and requested implementation in this Jekyll repository.
-- Minimal white/sans-serif homepage, uniform cards for all five games, dedicated game pages, real Steam capsules/screenshots/descriptions for Steam games.
-- Preserve mobile store links, privacy policies, domain/advertising verification files, and unrelated untracked AGENTS.md.
-- No staging, commits, deployment, framework migration, or Windows app control.
+## Current goal and authorization
+- User requested catalog/content changes to the approved minimal Jekyll redesign; implementation is complete locally.
+- No commits, staging, deployment, framework changes, or Windows app control.
 
-## Implementation plan
-- [x] Extend existing post metadata and capture public Steam content in `_data/steam.json`.
-- [x] Update existing shared templates and stylesheet; add reusable game card and game layout.
-- [x] Add progressively enhanced keyboard-accessible screenshot gallery.
-- [x] Verify rendering, page/asset links, desktop/mobile layout and gallery.
-
-## State
-- Implementation complete in the current checkout. No staging, commit, or deployment.
-- Five posts use the shared game layout and explicit `/games/<slug>/` permalinks.
-- Shared homepage includes, head/footer/nav, page layout, stylesheet entry/layout and main CSS updated.
-- New `_includes/game_card.html`, `_layouts/game.html`, `js/gallery.js`, Steam snapshot, and 55 local capsule/screenshot/thumbnail assets.
-- `scripts/update-steam.ps1` refreshes public English Steam content for quoted steam_id fields in posts. README documents content, build, and verification.
-- `_config.yml` uses the production URL/contact email and excludes development files from published output.
-- Steam data is a build-time snapshot, not a browser API dependency. Mobile content remains from existing posts.
+## Current implementation
+- Six games, newest release first: Rogue Curling (Upcoming, planned 2026-12-07), Tidy Backpack: In the Faraway Lands (2026-10-12), Alien Morgue (2026-02-16), Birdfull (2025-03-11), Tidy Backpack (2024-09-17), Fall Words (October 2023).
+- English Tap post and unused icon removed. Its generated page is absent after rebuilding.
+- Post release_order strings drive catalog and related-game ordering independently of publication dates.
+- Steam refresh script captures coming_soon and updates release_order from Steam; undated upcoming games use 9999-12-31.
+- Game cards use shared game_metadata.html for date/Upcoming and genre instead of authored blurbs.
+- Detail-page preview excerpts real descriptions; About retains the full Steam short description, with existing press-kit links directly underneath. Developer/publisher facts sidebar and its CSS removed.
+- Header uses existing img/logo_burgum.png. Intro and studio biography replaced with user's exact requested copy (em dashes encoded in HTML).
+- New game posts and Steam capsules/screenshots/thumbnails added; Steam data/assets refreshed. README and checks updated for six games.
+- Existing privacy policies, mobile store links, and domain/verification files retained.
 
 ## Verification
-- PASS: actual Jekyll 4.3.4 build through its Ruby API using a temporary portable Ruby runtime; no project dependencies changed. Native optional server dependencies prevented using standard Bundler/Rake; HTMLProofer external-link checks were not run.
-- PASS: tests/check_site.py validates eight built HTML pages, local assets/links/fragments, five game routes, related games, and excluded development files.
-- PASS: three Node gallery tests cover selection, wraparound, keyboard controls, and native modified clicks.
-- PASS: headless Chrome checks every game page, image loading, gallery click/keyboard interactions, uniform card media, no JavaScript errors, and no overflow at 320/375/768/1440px.
-- PASS: PowerShell updater syntax and git diff whitespace checks.
-- Desktop/mobile homepage and Birdfull screenshots visually inspected and retained in the task's visualization directory as preview artifacts.
-- Live site remains unchanged. Existing untracked AGENTS.md was not modified.
-- Temporary Ruby runtime/dependencies removed and QA server stopped after checks. Built `_site` remains ignored; preview screenshots remain as reviewable artifacts.
+- PASS: Jekyll 4.3.4 Ruby API build; current _site rebuilt for the user's local preview.
+- PASS: local link/asset/fragment checks across nine HTML pages and six game routes.
+- PASS: three gallery unit tests; updater syntax check; updater executed successfully for all five Steam games; git diff whitespace check.
+- PASS: headless Chrome verifies exact six-game release ordering, logo, metadata, removed sidebar, press-kit placement, image loading, gallery click/keyboard controls, and layouts at 320/375/768/1440px.
+- Updated catalog and Rogue Curling desktop screenshots visually inspected and retained in task visualization directory.
+- Full Bundler/HTMLProofer external-link check not run; temporary portable Ruby used for the actual build.
+- User previews _site via a static server; refresh after this rebuild. QA server uses separate port 4001 and is stopped after checks. Temporary Ruby runtime is removed after verification.

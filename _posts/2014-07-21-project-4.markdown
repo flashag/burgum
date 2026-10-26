@@ -1,8 +1,8 @@
 ---
 layout: game
+release_order: "2025-03-11"
 permalink: /games/birdfull/
 steam_id: "3194890"
-summary: "A small relaxing idle game about attracting birds to your cozy space."
 presskit: "https://flashag.notion.site/Birdfull-Presskit-1970fc7ec94f80039e69e27471205f58?pvs=74"
 stores:
   - label: View on Steam

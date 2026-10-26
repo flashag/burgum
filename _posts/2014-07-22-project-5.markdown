@@ -1,8 +1,8 @@
 ---
 layout: game
+release_order: "2026-02-16"
 permalink: /games/alien-morgue/
 steam_id: "3885910"
-summary: "Be an alien pathologist. Dissect bodies, find answers, make choices."
 presskit: "https://www.notion.so/flashag/Alien-Morgue-Press-Kit-2380fc7ec94f80f6a4cbc68636dc6299?source=copy_link"
 stores:
   - label: View on Steam
